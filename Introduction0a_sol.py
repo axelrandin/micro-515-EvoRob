@@ -6,9 +6,9 @@ import mujoco.viewer
 
 
 def set_gravity(model, x=0, y=0, z=-9.81):
-    print(f"Gravity set to: [{x}, {y}, {z}] m/s²")
-    # TODO: Set the gravity vector in the model to the provided x, y, z values
     model.opt.gravity[:] = [x, y, z]
+    print(f"Gravity set to: [{x}, {y}, {z}] m/s²")
+
 
 def run_sim(viewer, model, data, seconds: int = 10, dt: float = 0.002):
     step = 0
@@ -25,7 +25,7 @@ def run_sim(viewer, model, data, seconds: int = 10, dt: float = 0.002):
 
 
 def main():
-    xml_path = join('resources', 'exercise0.xml')
+    xml_path = join('resources', 'exercise0_sol.xml')
     model = mujoco.MjModel.from_xml_path(xml_path)
     data = mujoco.MjData(model)
     viewer = mujoco.viewer.launch_passive(model, data)
