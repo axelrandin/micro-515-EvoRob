@@ -32,37 +32,15 @@
 
     <!-- Static objects -->
     <body name="static_box" pos="0 0 2">
-      <geom name="box" type="box" size="0.25 0.25 0.25" rgba="0.8 0.4 0.1 1" mass="0.2" />
+      <geom name="box" type="box" size="0.25 0.25 0.25" rgba="0.8 0.4 0.1 1" mass="0.2"/>
     </body>
 
     <!-- Free-falling objects -->
     <!-- TODO -->
-    <body name="free_spheres" pos="0 0 3">
-      <geom name="sphere1" type="sphere" size="0.2" pos="0.5 0 0" rgba="0.1 0.4 0.8 1" mass="0.2"/>
-      <geom name="sphere2" type="sphere" size="0.2" pos="-0.5 0 0" rgba="0.1 0.8 0.4 1" mass="0.2"/>
-      <freejoint/>
-    </body>
+
     <!-- Simple 2-link robot arm -->
     <!-- TODO -->
-    <!-- Simple 2-link robot arm (not actuated) -->
-    <body name="arm_base" pos="1 0 0.2">
-      <!-- Base is fixed to the world (no joint here) -->
-      <geom name="base_geom" type="cylinder" size="0.08 0.1" rgba="0.4 0.4 0.4 1"/>
 
-      <!-- Joint 1: shoulder hinge -->
-      <joint name="shoulder" type="hinge" axis="0 1 0" pos="0 0 0.1" damping="0.5"/>
-      <geom name="link1" type="capsule" fromto="0 0 0.1   0.35 0 0.1" size="0.04" rgba="0.7 0.3 0.3 1"/>
-
-      <!-- Child body for link 2, attached at end of link 1 -->
-      <body name="link2_body" pos="0.35 0 0.1">
-        <!-- Joint 2: elbow hinge -->
-        <joint name="elbow" type="hinge" axis="0 1 0" pos="0 0 0" damping="0.5"/>
-        <geom name="link2" type="capsule" fromto="0 0 0   0.30 0 0" size="0.035" rgba="0.3 0.7 0.3 1"/>
-
-        <!-- A small "hand" sphere -->
-        <geom name="hand" type="sphere" size="0.05" pos="0.30 0 0" rgba="0.2 0.6 0.9 1"/>
-      </body>
-    </body>
   </worldbody>
 
 </mujoco>
